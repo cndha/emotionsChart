@@ -2,6 +2,8 @@ import React from "react";
 // @ts-ignore
 import * as d3 from "d3";
 import data from "./data.json";
+import { isConstructorDeclaration } from "typescript";
+import { svg } from "d3";
 
 const SIZE = 975;
 const RADIUS = SIZE / 2;
@@ -46,13 +48,17 @@ const SunburstChart = () => {
     const root = partition(data);
 
     const svg = d3.select(svgRef.current);
+    
+    const tooldiv = d3.select('#chartArea')
+      .append('div')
+      .style('visibility', 'hidden')
+      .style('position', 'absolute')
+      .style('background-color', 'white')
+      .style('padding', '1em')
+      .style('max-width', '150px')
+      .style('border', '1px solid')
+      .style('border-radius', '10px')
 
-    const tooldiv = d3
-      .select("#chartArea")
-      .append("div")
-      .style("visibility", "hidden")
-      .style("position", "absolute")
-      .style("background-color", "pink");
 
     svg
       .append("g")
@@ -68,7 +74,7 @@ const SunburstChart = () => {
       .on("mouseover", (e: any, d: any) => {
         console.log("mouseover::EVENT", e);
         console.log("mouseover::DATA", d);
-        tooldiv.style("visibility", "visible").text(`${d.data.description}`);
+        tooldiv.style("visibility", "visible").text(`${d.data.name}: ${d.data.description}`);
       })
       .on("mousemove", (e: any, d: any) => {
         tooldiv
@@ -117,7 +123,7 @@ const SunburstChart = () => {
   }, [arc, color, format]);
 
   return (
-    <div id="chartArea">
+    <div id="chartArea" style={{'display': 'flex', 'justifyContent': 'center', 'padding': '1em'}}>
       <svg width={SIZE} height={SIZE} ref={svgRef} />
     </div>
   );
