@@ -14,16 +14,14 @@ interface Data {
 }
 
 const SunburstChart = () => {
-  const [hover, setHover] = useState(false);
-
   const svgRef = React.useRef<SVGSVGElement>(null);
-  const [viewBox, setViewBox] = React.useState("0,0,0,0");
 
-  const partition = (data: Data) =>
-    d3.partition<Data>().size([2 * Math.PI, RADIUS])(
+  const partition = (data) =>
+    d3.partition().size([2 * Math.PI, RADIUS])(
       d3
         .hierarchy(data)
         .sum((d) => d.value)
+        .sort((a, b) => b.value - a.value) //REMOVE THIS TO NOT SORT?
     );
 
   const color = d3.scaleOrdinal(
@@ -33,7 +31,7 @@ const SunburstChart = () => {
   const format = d3.format(",d");
 
   const arc = d3
-    .arc<d3.HierarchyRectangularNode<Data>>()
+    .arc()
     .startAngle((d) => d.x0)
     .endAngle((d) => d.x1)
     .padAngle((d) => Math.min((d.x1 - d.x0) / 2, 0.005))
@@ -52,93 +50,78 @@ const SunburstChart = () => {
   };
 
   React.useEffect(() => {
-    setViewBox(getAutoBox());
+    const root = partition(data);
+
+    const svg = d3.select(svgRef.current);
+
+    const tooldiv = d3.select('#chartArea')
+      .append('div')
+      .style('visibility', 'hidden')
+      .style('position', 'absolute')
+      .style('background-color', 'pink')
+
+    svg
+      .append("g")
+      .attr("fill-opacity", 0.6)
+      .selectAll("path")
+      .data(root.descendants().filter((d) => d.depth))
+      .join("path")
+      .attr("fill", (d) => {
+        while (d.depth > 1) d = d.parent;
+        return color(d.data.name);
+      })
+      .attr("d", arc)
+      .on('mouseover', (e, d) => {
+        console.log('E:::', e);
+        console.log('D:::', d);
+        tooldiv.style('visibility', 'visible')
+          .text(`${d.data.description}`)
+      })
+      .on('mousemove', (e, d) => {
+        tooldiv.style('top', (e.pageY - 50) + 'px')
+          .style('left', (e.pageX - 50) + 'px')
+      })
+      .on('mouseout', () => { tooldiv.style('visibility', 'hidden') })
+      .append("title")
+      .text(
+        (d) =>
+          `${d
+            .ancestors()
+            .map((d) => d.data.name)
+            .reverse()
+            .join("/")}\n${format(d.value)}`
+      );
+
+    svg
+      .append("g")
+      .attr("pointer-events", "none")
+      .attr("text-anchor", "middle")
+      .attr("font-size", 10)
+      .attr("font-family", "sans-serif")
+      .selectAll("text")
+      .data(
+        root
+          .descendants()
+          .filter((d) => d.depth && ((d.y0 + d.y1) / 2) * (d.x1 - d.x0) > 10)
+      )
+      .join("text")
+      .attr("transform", function (d) {
+        const x = (((d.x0 + d.x1) / 2) * 180) / Math.PI;
+        const y = (d.y0 + d.y1) / 2;
+        return `rotate(${x - 90
+          }) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+      })
+      .attr("dy", "0.35em")
+      .text((d) => d.data.name);
+
+    svg.attr("viewBox", getAutoBox);
   }, []);
-
-  const getColor = (d: d3.HierarchyRectangularNode<Data>) => {
-    while (d.depth > 1) d = d.parent;
-    return color(d.data.name);
-  };
-
-  const getTextTransform = (d: d3.HierarchyRectangularNode<Data>) => {
-    const x = (((d.x0 + d.x1) / 2) * 180) / Math.PI;
-    const y = (d.y0 + d.y1) / 2;
-    return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
-  };
-
-  const root = partition(data);
-
-  // const addHover = (d) => {
-  //   console.log("addHover function:::", d.data.description)
-  //   setHover(true);
-  // }
-
-  // const removeHover = () => {
-  //   setHover(false);
-  // }
-
-  // const mouseEnter = (e, d) => {
-  //   // tooldiv.style('visibility', 'visible').text(`${d.data.description}`)
-  //   console.log('parent', e.target.parent);
-  // }
-
-  const tooldiv = d3.select('#chartArea')
-                .append('div')
-                .style('visibility', 'hidden')
-                .style('position', 'absolute')
-                .style('background-color', 'pink');
-                
 
   return (
     <div id="chartArea">
-      <svg width={SIZE} height={SIZE} viewBox={viewBox} ref={svgRef}>
-        <g fillOpacity={0.6}>
-          {root
-            .descendants()
-            .filter((d) => d.depth)
-            .map((d, i) => (
-              <path 
-                key={`${d.data.name}-${i}`} 
-                fill={getColor(d)} 
-                d={arc(d)} 
-                onMouseEnter={(e) => {
-                  console.log(e);
-                  console.log(d)
-                  tooldiv.style('visibility', 'visible').text(`${d.description}`)
-                }}>
-                <text>
-                  {d
-                    .ancestors()
-                    .map((d) => d.data.name)
-                    .reverse()
-                    .join("/")}
-                  \n${format(d.value)}
-                </text>
-              </path>
-            ))}
-        </g>
-        <g
-          pointerEvents="none"
-          textAnchor="middle"
-          fontSize={10}
-          fontFamily="sans-serif"
-        >
-          {root
-            .descendants()
-            .filter((d) => d.depth && ((d.y0 + d.y1) / 2) * (d.x1 - d.x0) > 10)
-            .map((d, i) => (
-              <text
-                key={`${d.data.name}-${i}`}
-                transform={getTextTransform(d)}
-                dy="0.35em"
-              >
-                {d.data.name}
-              </text>
-            ))}
-        </g>
-      </svg>
+      <svg width={SIZE} height={SIZE} ref={svgRef} />
     </div>
   );
-};
+}
 
 export default SunburstChart;
