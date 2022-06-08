@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import * as d3 from "d3";
 import data from "./data.json";
 import { isConstructorDeclaration } from "typescript";
+import HoverModal from './HoverModal';
+import { svg } from "d3";
 
 const SIZE = 975;
 const RADIUS = SIZE / 2;
@@ -12,6 +14,8 @@ interface Data {
 }
 
 const SunburstChart = () => {
+  const [hover, setHover] = useState(false);
+
   const svgRef = React.useRef<SVGSVGElement>(null);
   const [viewBox, setViewBox] = React.useState("0,0,0,0");
 
@@ -64,49 +68,76 @@ const SunburstChart = () => {
 
   const root = partition(data);
 
-  const hoverFunc = (d) => {
-    return <HoverModal d={d.data.description}/>
-  }
+  // const addHover = (d) => {
+  //   console.log("addHover function:::", d.data.description)
+  //   setHover(true);
+  // }
+
+  // const removeHover = () => {
+  //   setHover(false);
+  // }
+
+  // const mouseEnter = (e, d) => {
+  //   // tooldiv.style('visibility', 'visible').text(`${d.data.description}`)
+  //   console.log('parent', e.target.parent);
+  // }
+
+  const tooldiv = d3.select('#chartArea')
+                .append('div')
+                .style('visibility', 'hidden')
+                .style('position', 'absolute')
+                .style('background-color', 'pink');
+                
 
   return (
-    <svg width={SIZE} height={SIZE} viewBox={viewBox} ref={svgRef}>
-      <g fillOpacity={0.6}>
-        {root
-          .descendants()
-          .filter((d) => d.depth)
-          .map((d, i) => (
-            <path key={`${d.data.name}-${i}`} fill={getColor(d)} d={arc(d)} onMouseEnter={() => hoverFunc(d)}>
-              <text>
-                {d
-                  .ancestors()
-                  .map((d) => d.data.name)
-                  .reverse()
-                  .join("/")}
-                \n${format(d.value)}
+    <div id="chartArea">
+      <svg width={SIZE} height={SIZE} viewBox={viewBox} ref={svgRef}>
+        <g fillOpacity={0.6}>
+          {root
+            .descendants()
+            .filter((d) => d.depth)
+            .map((d, i) => (
+              <path 
+                key={`${d.data.name}-${i}`} 
+                fill={getColor(d)} 
+                d={arc(d)} 
+                onMouseEnter={(e) => {
+                  console.log(e);
+                  console.log(d)
+                  tooldiv.style('visibility', 'visible').text(`${d.description}`)
+                }}>
+                <text>
+                  {d
+                    .ancestors()
+                    .map((d) => d.data.name)
+                    .reverse()
+                    .join("/")}
+                  \n${format(d.value)}
+                </text>
+              </path>
+            ))}
+        </g>
+        <g
+          pointerEvents="none"
+          textAnchor="middle"
+          fontSize={10}
+          fontFamily="sans-serif"
+        >
+          {root
+            .descendants()
+            .filter((d) => d.depth && ((d.y0 + d.y1) / 2) * (d.x1 - d.x0) > 10)
+            .map((d, i) => (
+              <text
+                key={`${d.data.name}-${i}`}
+                transform={getTextTransform(d)}
+                dy="0.35em"
+              >
+                {d.data.name}
               </text>
-            </path>
-          ))}
-      </g>
-      <g
-        pointerEvents="none"
-        textAnchor="middle"
-        fontSize={10}
-        fontFamily="sans-serif"
-      >
-        {root
-          .descendants()
-          .filter((d) => d.depth && ((d.y0 + d.y1) / 2) * (d.x1 - d.x0) > 10)
-          .map((d, i) => (
-            <text
-              key={`${d.data.name}-${i}`}
-              transform={getTextTransform(d)}
-              dy="0.35em"
-            >
-              {d.data.name}
-            </text>
-          ))}
-      </g>
-    </svg>
+            ))}
+        </g>
+      </svg>
+    </div>
   );
 };
 
