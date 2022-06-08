@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import * as d3 from "d3";
 import data from "./data.json";
 import { isConstructorDeclaration } from "typescript";
-import HoverModal from './HoverModal';
 import { svg } from "d3";
 
 const SIZE = 975;
@@ -58,7 +57,11 @@ const SunburstChart = () => {
       .append('div')
       .style('visibility', 'hidden')
       .style('position', 'absolute')
-      .style('background-color', 'pink')
+      .style('background-color', 'white')
+      .style('padding', '1em')
+      .style('max-width', '150px')
+      .style('border', '1px solid')
+      .style('border-radius', '10px')
 
     svg
       .append("g")
@@ -75,7 +78,7 @@ const SunburstChart = () => {
         console.log('E:::', e);
         console.log('D:::', d);
         tooldiv.style('visibility', 'visible')
-          .text(`${d.data.description}`)
+          .text(`${d.data.name}: ${d.data.description}`)
       })
       .on('mousemove', (e, d) => {
         tooldiv.style('top', (e.pageY - 50) + 'px')
@@ -118,7 +121,7 @@ const SunburstChart = () => {
   }, []);
 
   return (
-    <div id="chartArea">
+    <div id="chartArea" style={{'display': 'flex', 'justifyContent': 'center', 'padding': '1em'}}>
       <svg width={SIZE} height={SIZE} ref={svgRef} />
     </div>
   );
