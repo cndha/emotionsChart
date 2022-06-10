@@ -69,7 +69,7 @@ const SunburstChart = () => {
         return color(d.data.name);
       })
       .attr("d", arc)
-      .on("click", (d: any) => {
+      .on("click", (e: any, d: any) => {
         tooldiv
           .style("visibility", "visible")
           .text(`${d.data.name}: ${d.data.description}`)
