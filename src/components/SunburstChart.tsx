@@ -73,8 +73,8 @@ const SunburstChart = () => {
         tooldiv
           .style("visibility", "visible")
           .text(`${d.data.name}: ${d.data.description}`)
-          .style("top", "450px")
-          .style("left", "665px");
+          .style("top", "10%")
+          .style("left", "78%");
       })
       .append("title")
       .text(
