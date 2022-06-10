@@ -1,376 +1,699 @@
 {
-    "name": "emotions",
-    "children": [
-      {
-        "name": "Surprised",
-        "children": [
-          {
-            "name": "Startled",
-            "children": [
-              { "name": "Shocked", "value": 12, "description": "cause (someone) to feel surprised and upset." },
-              { "name": "Dismayed", "value": 12, "description": "cause (someone) to feel consternation and distress." }
-            ],
-            "description": "feeling or showing sudden shock or alarm."
-          },
-          {
-            "name": "Confused",
-            "children": [
-              { "name": "Disillusioned", "value": 12, "description": "disappointed in someone or something that one discovers to be less good than one had believed." },
-              { "name": "Perplexed", "value": 12, "description": "completely baffled; very puzzled." }
-            ],
-            "description": "(of a person) unable to think clearly; bewildered."
-          },
-          {
-            "name": "Amazed",
-            "children": [
-              { "name": "Astonished", "value": 12, "description": "greatly surprised or impressed; amazed." },
-              { "name": "Awe", "value": 12, "description": "a feeling of reverential respect mixed with fear or wonder." }
-            ],
-            "description": "greatly surprised; astonished."
-          },
-          {
-            "name": "Excited",
-            "children": [
-              { "name": "Eager", "value": 12, "description": "(of a person) wanting to do or have something very much." },
-              { "name": "Energetic", "value": 12, "description": "showing or involving great activity or vitality." }
-            ],
-            "description": "very enthusiastic and eager."
-          }
-        ],
-        "description": "feeling or showing surprise."
-      },
-      {
-        "name": "Happy",
-        "children": [
-          {
-            "name": "Playful",
-            "children": [
-              { "name": "Aroused", "value": 12, "description": "evoke or awaken (a feeling, emotion, or response)." },
-              { "name": "Cheeky", "value": 12, "description": "impudent or irreverent, typically in an endearing or amusing way." }
-            ],
-            "description": "fond of games and amusement; lighthearted."
-          },
-          {
-            "name": "Content",
-            "children": [
-              { "name": "Free", "value": 12, "description": "not under the control or in the power of another; able to act or be done as one wishes." },
-              { "name": "Joyful", "value": 12, "description": "feeling, expressing, or causing great pleasure and happiness." }
-            ],
-            "description": "in a state of peaceful happiness."
-          },
-          {
-            "name": "Interested",
-            "children": [
-              { "name": "Curious", "value": 12, "description": "eager to know or learn something." },
-              { "name": "Inquisitive", "value": 12, "description": "curious or inquiring." }
-            ],
-            "description": "showing curiosity or concern about something or someone; having a feeling of interest."
-          },
-          {
-            "name": "Proud",
-            "children": [
-              { "name": "Successful", "value": 12, "description": "accomplishing an aim or purpose." },
-              { "name": "Confident", "value": 12, "description": "feeling or showing confidence in oneself; self-assured." }
-            ],
-            "description": "feeling deep pleasure or satisfaction as a result of one's own achievements, qualities, or possessions or those of someone with whom one is closely associated."
-          },
-          {
-            "name": "Accepted",
-            "children": [
-              { "name": "Respected", "value": 12, "description": "admire (someone or something) deeply, as a result of their abilities, qualities, or achievements." },
-              { "name": "Valued", "value": 12, "description": "considered to be important or beneficial; cherished." }
-            ],
-            "description": "generally believed or recognized to be valid or correct."
-          },
-          {
-            "name": "Powerful",
-            "children": [
-              { "name": "Courageous", "value": 12, "description": "not deterred by danger or pain; brave." },
-              { "name": "Creative", "value": 12, "description": "relating to or involving the imagination or original ideas, especially in the production of an artistic work." }
-            ],
-            "description": "having great power or strength."
-          },
-          {
-            "name": "Peaceful",
-            "children": [
-              { "name": "Loving", "value": 12, "description": "feeling or showing love or great care." },
-              { "name": "Thankful", "value": 12, "description": "pleased and relieved." }
-            ],
-            "description": "free from disturbance; tranquil."
-          },
-          {
-            "name": "Trusting",
-            "children": [
-              { "name": "Sensitive", "value": 12, "description": "quick to detect or respond to slight changes, signals, or influences." },
-              { "name": "Intimate", "value": 12, "description": "closely acquainted; familiar, close." }
-            ],
-            "description": "showing or tending to have a belief in a person's honesty or sincerity; not suspicious."
-          },
-          {
-            "name": "Optimistic",
-            "children": [
-              { "name": "Hopeful", "value": 12, "description": "feeling or inspiring optimism about a future event." },
-              { "name": "Inspired", "value": 12, "description": "of extraordinary quality, as if arising from some external creative impulse." }
-            ],
-            "description": "hopeful and confident about the future."
-          }
-        ],
-        "description": "feeling or showing pleasure or contentment."
-      }, 
-      {
-        "name": "Sad",
-        "children": [
-          {
-            "name": "Lonely",
-            "children": [
-              { "name": "Isolated", "value": 12, "description": "ar away from other places, buildings, or people; remote." },
-              { "name": "Abandoned", "value": 12, "description": "having been deserted or cast off." }
-            ],
-            "description": "sad because one has no friends or company."
-          },
-          {
-            "name": "Vulnerable",
-            "children": [
-              { "name": "Victimized", "value": 12, "description": "single (someone) out for cruel or unjust treatment." },
-              { "name": "Fragile", "value": 12, "description": "(of an object) easily broken or damaged." }
-            ],
-            "description": "susceptible to physical or emotional attack or harm."
-          },
-          {
-            "name": "Despair",
-            "children": [
-              { "name": "Grief", "value": 12, "description": "deep sorrow, especially that caused by someone's death." },
-              { "name": "Powerless", "value": 12, "description": "without ability, influence, or power." }
-            ],
-            "description": "the complete loss or absence of hope."
-          },
-          {
-            "name": "Guilty",
-            "children": [
-              { "name": "Ashamed", "value": 12, "description": "embarrassed or guilty because of one's actions, characteristics, or associations." },
-              { "name": "Remorseful", "value": 12, "description": "filled with remorse; sorry." }
-            ],
-            "description": "culpable of or responsible for a specified wrongdoing."
-          },
-          {
-            "name": "Depressed",
-            "children": [
-              { "name": "Empty", "value": 12, "description": "containing nothing; not filled or occupied." },
-              { "name": "Inferior", "value": 12, "description": "lower in rank, status, or quality." }
-            ],
-            "description": "(of a person) in a state of general unhappiness or despondency."
-          },
-          {
-            "name": "Hurt",
-            "children": [
-              { "name": "Disappointed", "value": 12, "description": "(of a person) sad or displeased because someone or something has failed to fulfill one's hopes or expectations." },
-              { "name": "Embarrassed", "value": 12, "description": "feeling or showing embarrassment." }
-            ],
-            "description": "cause physical pain or injury to."
-          }
-        ],
-        "description": "feeling or showing sorrow; unhappy."
-      },      
-      {
-        "name": "Disgusted",
-        "children": [
-          {
-            "name": "Repelled",
-            "children": [
-              { "name": "Hesitant", "value": 12, "description": "tentative, unsure, or slow in acting or speaking." },
-              { "name": "Horrified", "value": 12, "description": "filled with horror; extremely shocked." }
-            ],
-            "description": "drive or force (an attack or attacker) back or away."
-          },
-          {
-            "name": "Awful",
-            "children": [
-              { "name": "Detestable", "value": 12, "description": "deserving intense dislike." },
-              { "name": "Nauseated", "value": 12, "description": "make (someone) feel sick; affect with nausea." }
-            ],
-            "description": "very bad or unpleasant."
-          },
-          {
-            "name": "Disappointed",
-            "children": [
-              { "name": "Revolted", "value": 12, "description": "disgusted." },
-              { "name": "Appalled", "value": 12, "description": "greatly dismayed or horrified." }
-            ],
-            "description": "(of a person) sad or displeased because someone or something has failed to fulfill one's hopes or expectations."
-          },
-          {
-            "name": "Disapproving",
-            "children": [
-              { "name": "Embarrassed", "value": 12, "description": "feeling or showing embarrassment." },
-              { "name": "Judgmental", "value": 12, "description": "of or concerning the use of judgment." }
-            ],
-            "description": "expressing an unfavorable opinion."
-          }
-        ],
-        "description": "feeling or expressing revulsion or strong disapproval."
-      },      
-      {
-        "name": "Anger",
-        "children": [
-          {
-            "name": "Critical",
-            "children": [
-              { "name": "Dismissive", "value": 12, "description": "feeling or showing that something is unworthy of consideration." },
-              { "name": "Skeptical", "value": 12, "description": "not easily convinced; having doubts or reservations." }
-            ],
-            "description": "expressing adverse or disapproving comments or judgments."
-          },
-          {
-            "name": "Distant",
-            "children": [
-              { "name": "Numb", "value": 12, "description": "deprived of the power of sensation." },
-              { "name": "Withdrawn", "value": 12, "description": "not wanting to communicate with other people." }
-            ],
-            "description": "far away in space or time."
-          },
-          {
-            "name": "Frustrated",
-            "children": [
-              { "name": "Annoyed", "value": 12, "description": "slightly angry; irritated." },
-              { "name": "Infuriated", "value": 12, "description": "make (someone) extremely angry and impatient." }
-            ],
-            "description": "feeling or expressing distress and annoyance, especially because of inability to change or achieve something."
-          },
-          {
-            "name": "Aggressive",
-            "children": [
-              { "name": "Hostile", "value": 12, "description": "unfriendly; antagonistic." },
-              { "name": "Provoked", "value": 12, "description": "stimulate or give rise to (a reaction or emotion, typically a strong or unwelcome one) in someone." }
-            ],
-            "description": "ready or likely to attack or confront; characterized by or resulting from aggression."
-          },
-          {
-            "name": "Mad",
-            "children": [
-              { "name": "Jealous", "value": 12, "description": "feeling or showing envy of someone or their achievements and advantages." },
-              { "name": "Furious", "value": 12, "description": "extremely angry." }
-            ],
-            "description": "very angry."
-          },
-          {
-            "name": "Bitter",
-            "children": [
-              { "name": "Violated", "value": 12, "description": "break or fail to comply with (a rule or formal agreement)." },
-              { "name": "Indignant", "value": 12, "description": "feeling or showing anger or annoyance at what is perceived as unfair treatment." }
-            ],
-            "description": "having a sharp, pungent taste or smell; not sweet."
-          },
-          {
-            "name": "Humiliated",
-            "children": [
-              { "name": "Ridiculed", "value": 12, "description": "subject (someone or something) to contemptuous and dismissive language or behavior." },
-              { "name": "Disrespected", "value": 12, "description": "show a lack of respect for; insult." }
-            ],
-            "description": "make (someone) feel ashamed and foolish by injuring their dignity and self-respect, especially publicly."
-          },
-          {
-            "name": "Let down",
-            "children": [
-              { "name": "Resentful", "value": 12, "description": "feeling or expressing bitterness or indignation at having been treated unfairly." },
-              { "name": "Betrayed", "value": 12, "description": "expose (one's country, a group, or a person) to danger by treacherously giving information to an enemy." }
-            ],
-            "description": "fail to support or help someone as they had hoped or expected."
-          }
-        ],
-        "description": "a strong feeling of annoyance, displeasure, or hostility."
-      },      
-      {
-        "name": "Fearful",
-        "children": [
-          {
-            "name": "Threatened",
-            "children": [
-              { "name": "Exposed", "value": 12, "description": "not covered or hidden; visible." },
-              { "name": "Nervous", "value": 12, "description": "easily agitated or alarmed; tending to be anxious; highly strung." }
-            ],
-            "description": "state one's intention to take hostile action against someone in retribution for something done or not done."
-          },
-          {
-            "name": "Rejected",
-            "children": [
-              { "name": "Persecuted", "value": 12, "description": "subject (someone) to hostility and ill-treatment, especially because of their race or political or religious beliefs." },
-              { "name": "Excluded", "value": 12, "description": "deny (someone) access to or bar (someone) from a place, group, or privilege." }
-            ],
-            "description": "dismiss as inadequate, inappropriate, or not to one's taste."
-          },
-          {
-            "name": "Weak",
-            "children": [
-              { "name": "Insignificant", "value": 12, "description": "too small or unimportant to be worth consideration." },
-              { "name": "Worthless", "value": 12, "description": "having no real value or use." }
-            ],
-            "description": "lacking the power to perform physically demanding tasks; lacking physical strength and energy."
-          },
-          {
-            "name": "Insecure",
-            "children": [
-              { "name": "Inferior", "value": 12, "description": "lower in rank, status, or quality." },
-              { "name": "Inadequate", "value": 12, "description": "lacking the quality or quantity required; insufficient for a purpose." }
-            ],
-            "description": "not firmly fixed; liable to give way or break."
-          },
-          {
-            "name": "Anxious",
-            "children": [
-              { "name": "Worried", "value": 12, "description": "anxious or troubled about actual or potential problems." },
-              { "name": "Overwhelmed", "value": 12, "description": "bury or drown beneath a huge mass." }
-            ],
-            "description": "experiencing worry, unease, or nervousness, typically about an imminent event or something with an uncertain outcome."
-          },
-          {
-            "name": "Scared",
-            "children": [
-              { "name": "Frightened", "value": 12, "description": "afraid or anxious." },
-              { "name": "Helpless", "value": 12, "description": "unable to defend oneself or to act without help." }
-            ],
-            "description": "fearful; frightened."
-          }
-        ],
-        "description": "feeling afraid; showing fear or anxiety."
-      },      
-      {
-        "name": "Bad",
-        "children": [
-          {
-            "name": "Bored",
-            "children": [
-              { "name": "Indifferent", "value": 12, "description": "having no particular interest or sympathy; unconcerned." },
-              { "name": "Apathetic", "value": 12, "description": "showing or feeling no interest, enthusiasm, or concern." }
-            ],
-            "description": "feeling weary because one is unoccupied or lacks interest in one's current activity."
-          },
-          {
-            "name": "Busy",
-            "children": [
-              { "name": "Pressured", "value": 12, "description": "attempt to persuade or coerce (someone) into doing something." },
-              { "name": "Rushed", "value": 12, "description": "done or completed too hurriedly; hasty." }
-            ],
-            "description": "having a great deal to do."
-          },
-          {
-            "name": "Stressed",
-            "children": [
-              { "name": "Overwhelmed", "value": 12, "description": "bury or drown beneath a huge mass." },
-              { "name": "Out of Control", "value": 12, "description": "no longer possible to manage." }
-            ],
-            "description": "experiencing mental or emotional strain or tension."
-          },
-          {
-            "name": "Tired",
-            "children": [
-              { "name": "Sleepy", "value": 12, "description": "needing or ready for sleep." },
-              { "name": "Unfocused", "value": 12, "description": "(of a person or their eyes) not seeing clearly; appearing glazed or expressionless." }
-            ],
-            "description": "in need of sleep or rest; weary."
-          }
-        ],
-        "description": "of poor quality or a low standard."
-      }
-    ]
-  }
-  
+  "name": "emotions",
+  "children": [
+    {
+      "name": "Surprised",
+      "children": [
+        {
+          "name": "Startled",
+          "children": [
+            {
+              "name": "Shocked",
+              "value": 12,
+              "description": "cause (someone) to feel surprised and upset."
+            },
+            {
+              "name": "Dismayed",
+              "value": 12,
+              "description": "cause (someone) to feel consternation and distress."
+            }
+          ],
+          "description": "feeling or showing sudden shock or alarm."
+        },
+        {
+          "name": "Confused",
+          "children": [
+            {
+              "name": "Disillusioned",
+              "value": 12,
+              "description": "disappointed in someone or something that one discovers to be less good than one had believed."
+            },
+            {
+              "name": "Perplexed",
+              "value": 12,
+              "description": "completely baffled; very puzzled."
+            }
+          ],
+          "description": "(of a person) unable to think clearly; bewildered."
+        },
+        {
+          "name": "Amazed",
+          "children": [
+            {
+              "name": "Astonished",
+              "value": 12,
+              "description": "greatly surprised or impressed; amazed."
+            },
+            {
+              "name": "Awe",
+              "value": 12,
+              "description": "a feeling of reverential respect mixed with fear or wonder."
+            }
+          ],
+          "description": "greatly surprised; astonished."
+        },
+        {
+          "name": "Excited",
+          "children": [
+            {
+              "name": "Eager",
+              "value": 12,
+              "description": "(of a person) wanting to do or have something very much."
+            },
+            {
+              "name": "Energetic",
+              "value": 12,
+              "description": "showing or involving great activity or vitality."
+            }
+          ],
+          "description": "very enthusiastic and eager."
+        }
+      ],
+      "description": "feeling or showing surprise."
+    },
+    {
+      "name": "Happy",
+      "children": [
+        {
+          "name": "Playful",
+          "children": [
+            {
+              "name": "Aroused",
+              "value": 12,
+              "description": "evoke or awaken (a feeling, emotion, or response)."
+            },
+            {
+              "name": "Cheeky",
+              "value": 12,
+              "description": "impudent or irreverent, typically in an endearing or amusing way."
+            }
+          ],
+          "description": "fond of games and amusement; lighthearted."
+        },
+        {
+          "name": "Content",
+          "children": [
+            {
+              "name": "Free",
+              "value": 12,
+              "description": "not under the control or in the power of another; able to act or be done as one wishes."
+            },
+            {
+              "name": "Joyful",
+              "value": 12,
+              "description": "feeling, expressing, or causing great pleasure and happiness."
+            }
+          ],
+          "description": "in a state of peaceful happiness."
+        },
+        {
+          "name": "Interested",
+          "children": [
+            {
+              "name": "Curious",
+              "value": 12,
+              "description": "eager to know or learn something."
+            },
+            {
+              "name": "Inquisitive",
+              "value": 12,
+              "description": "curious or inquiring."
+            }
+          ],
+          "description": "showing curiosity or concern about something or someone; having a feeling of interest."
+        },
+        {
+          "name": "Proud",
+          "children": [
+            {
+              "name": "Successful",
+              "value": 12,
+              "description": "accomplishing an aim or purpose."
+            },
+            {
+              "name": "Confident",
+              "value": 12,
+              "description": "feeling or showing confidence in oneself; self-assured."
+            }
+          ],
+          "description": "feeling deep pleasure or satisfaction as a result of one's own achievements, qualities, or possessions or those of someone with whom one is closely associated."
+        },
+        {
+          "name": "Accepted",
+          "children": [
+            {
+              "name": "Respected",
+              "value": 12,
+              "description": "admire (someone or something) deeply, as a result of their abilities, qualities, or achievements."
+            },
+            {
+              "name": "Valued",
+              "value": 12,
+              "description": "considered to be important or beneficial; cherished."
+            }
+          ],
+          "description": "generally believed or recognized to be valid or correct."
+        },
+        {
+          "name": "Powerful",
+          "children": [
+            {
+              "name": "Courageous",
+              "value": 12,
+              "description": "not deterred by danger or pain; brave."
+            },
+            {
+              "name": "Creative",
+              "value": 12,
+              "description": "relating to or involving the imagination or original ideas, especially in the production of an artistic work."
+            }
+          ],
+          "description": "having great power or strength."
+        },
+        {
+          "name": "Peaceful",
+          "children": [
+            {
+              "name": "Loving",
+              "value": 12,
+              "description": "feeling or showing love or great care."
+            },
+            {
+              "name": "Thankful",
+              "value": 12,
+              "description": "pleased and relieved."
+            }
+          ],
+          "description": "free from disturbance; tranquil."
+        },
+        {
+          "name": "Trusting",
+          "children": [
+            {
+              "name": "Sensitive",
+              "value": 12,
+              "description": "quick to detect or respond to slight changes, signals, or influences."
+            },
+            {
+              "name": "Intimate",
+              "value": 12,
+              "description": "closely acquainted; familiar, close."
+            }
+          ],
+          "description": "showing or tending to have a belief in a person's honesty or sincerity; not suspicious."
+        },
+        {
+          "name": "Optimistic",
+          "children": [
+            {
+              "name": "Hopeful",
+              "value": 12,
+              "description": "feeling or inspiring optimism about a future event."
+            },
+            {
+              "name": "Inspired",
+              "value": 12,
+              "description": "of extraordinary quality, as if arising from some external creative impulse."
+            }
+          ],
+          "description": "hopeful and confident about the future."
+        }
+      ],
+      "description": "feeling or showing pleasure or contentment."
+    },
+    {
+      "name": "Sad",
+      "children": [
+        {
+          "name": "Lonely",
+          "children": [
+            {
+              "name": "Isolated",
+              "value": 12,
+              "description": "ar away from other places, buildings, or people; remote."
+            },
+            {
+              "name": "Abandoned",
+              "value": 12,
+              "description": "having been deserted or cast off."
+            }
+          ],
+          "description": "sad because one has no friends or company."
+        },
+        {
+          "name": "Vulnerable",
+          "children": [
+            {
+              "name": "Victimized",
+              "value": 12,
+              "description": "single (someone) out for cruel or unjust treatment."
+            },
+            {
+              "name": "Fragile",
+              "value": 12,
+              "description": "(of an object) easily broken or damaged."
+            }
+          ],
+          "description": "susceptible to physical or emotional attack or harm."
+        },
+        {
+          "name": "Despair",
+          "children": [
+            {
+              "name": "Grief",
+              "value": 12,
+              "description": "deep sorrow, especially that caused by someone's death."
+            },
+            {
+              "name": "Powerless",
+              "value": 12,
+              "description": "without ability, influence, or power."
+            }
+          ],
+          "description": "the complete loss or absence of hope."
+        },
+        {
+          "name": "Guilty",
+          "children": [
+            {
+              "name": "Ashamed",
+              "value": 12,
+              "description": "embarrassed or guilty because of one's actions, characteristics, or associations."
+            },
+            {
+              "name": "Remorseful",
+              "value": 12,
+              "description": "filled with remorse; sorry."
+            }
+          ],
+          "description": "culpable of or responsible for a specified wrongdoing."
+        },
+        {
+          "name": "Depressed",
+          "children": [
+            {
+              "name": "Empty",
+              "value": 12,
+              "description": "containing nothing; not filled or occupied."
+            },
+            {
+              "name": "Inferior",
+              "value": 12,
+              "description": "lower in rank, status, or quality."
+            }
+          ],
+          "description": "(of a person) in a state of general unhappiness or despondency."
+        },
+        {
+          "name": "Hurt",
+          "children": [
+            {
+              "name": "Disappointed",
+              "value": 12,
+              "description": "(of a person) sad or displeased because someone or something has failed to fulfill one's hopes or expectations."
+            },
+            {
+              "name": "Embarrassed",
+              "value": 12,
+              "description": "feeling or showing embarrassment."
+            }
+          ],
+          "description": "cause physical pain or injury to."
+        }
+      ],
+      "description": "feeling or showing sorrow; unhappy."
+    },
+    {
+      "name": "Disgusted",
+      "children": [
+        {
+          "name": "Repelled",
+          "children": [
+            {
+              "name": "Hesitant",
+              "value": 12,
+              "description": "tentative, unsure, or slow in acting or speaking."
+            },
+            {
+              "name": "Horrified",
+              "value": 12,
+              "description": "filled with horror; extremely shocked."
+            }
+          ],
+          "description": "drive or force (an attack or attacker) back or away."
+        },
+        {
+          "name": "Awful",
+          "children": [
+            {
+              "name": "Detestable",
+              "value": 12,
+              "description": "deserving intense dislike."
+            },
+            {
+              "name": "Nauseated",
+              "value": 12,
+              "description": "make (someone) feel sick; affect with nausea."
+            }
+          ],
+          "description": "very bad or unpleasant."
+        },
+        {
+          "name": "Disappointed",
+          "children": [
+            { "name": "Revolted", "value": 12, "description": "disgusted." },
+            {
+              "name": "Appalled",
+              "value": 12,
+              "description": "greatly dismayed or horrified."
+            }
+          ],
+          "description": "(of a person) sad or displeased because someone or something has failed to fulfill one's hopes or expectations."
+        },
+        {
+          "name": "Disapproving",
+          "children": [
+            {
+              "name": "Embarrassed",
+              "value": 12,
+              "description": "feeling or showing embarrassment."
+            },
+            {
+              "name": "Judgmental",
+              "value": 12,
+              "description": "of or concerning the use of judgment."
+            }
+          ],
+          "description": "expressing an unfavorable opinion."
+        }
+      ],
+      "description": "feeling or expressing revulsion or strong disapproval."
+    },
+    {
+      "name": "Anger",
+      "children": [
+        {
+          "name": "Critical",
+          "children": [
+            {
+              "name": "Dismissive",
+              "value": 12,
+              "description": "feeling or showing that something is unworthy of consideration."
+            },
+            {
+              "name": "Skeptical",
+              "value": 12,
+              "description": "not easily convinced; having doubts or reservations."
+            }
+          ],
+          "description": "expressing adverse or disapproving comments or judgments."
+        },
+        {
+          "name": "Distant",
+          "children": [
+            {
+              "name": "Numb",
+              "value": 12,
+              "description": "deprived of the power of sensation."
+            },
+            {
+              "name": "Withdrawn",
+              "value": 12,
+              "description": "not wanting to communicate with other people."
+            }
+          ],
+          "description": "far away in space or time."
+        },
+        {
+          "name": "Frustrated",
+          "children": [
+            {
+              "name": "Annoyed",
+              "value": 12,
+              "description": "slightly angry; irritated."
+            },
+            {
+              "name": "Infuriated",
+              "value": 12,
+              "description": "make (someone) extremely angry and impatient."
+            }
+          ],
+          "description": "feeling or expressing distress and annoyance, especially because of inability to change or achieve something."
+        },
+        {
+          "name": "Aggressive",
+          "children": [
+            {
+              "name": "Hostile",
+              "value": 12,
+              "description": "unfriendly; antagonistic."
+            },
+            {
+              "name": "Provoked",
+              "value": 12,
+              "description": "stimulate or give rise to (a reaction or emotion, typically a strong or unwelcome one) in someone."
+            }
+          ],
+          "description": "ready or likely to attack or confront; characterized by or resulting from aggression."
+        },
+        {
+          "name": "Mad",
+          "children": [
+            {
+              "name": "Jealous",
+              "value": 12,
+              "description": "feeling or showing envy of someone or their achievements and advantages."
+            },
+            {
+              "name": "Furious",
+              "value": 12,
+              "description": "extremely angry."
+            }
+          ],
+          "description": "very angry."
+        },
+        {
+          "name": "Bitter",
+          "children": [
+            {
+              "name": "Violated",
+              "value": 12,
+              "description": "break or fail to comply with (a rule or formal agreement)."
+            },
+            {
+              "name": "Indignant",
+              "value": 12,
+              "description": "feeling or showing anger or annoyance at what is perceived as unfair treatment."
+            }
+          ],
+          "description": "having a sharp, pungent taste or smell; not sweet."
+        },
+        {
+          "name": "Humiliated",
+          "children": [
+            {
+              "name": "Ridiculed",
+              "value": 12,
+              "description": "subject (someone or something) to contemptuous and dismissive language or behavior."
+            },
+            {
+              "name": "Disrespected",
+              "value": 12,
+              "description": "show a lack of respect for; insult."
+            }
+          ],
+          "description": "make (someone) feel ashamed and foolish by injuring their dignity and self-respect, especially publicly."
+        },
+        {
+          "name": "Let down",
+          "children": [
+            {
+              "name": "Resentful",
+              "value": 12,
+              "description": "feeling or expressing bitterness or indignation at having been treated unfairly."
+            },
+            {
+              "name": "Betrayed",
+              "value": 12,
+              "description": "expose (one's country, a group, or a person) to danger by treacherously giving information to an enemy."
+            }
+          ],
+          "description": "fail to support or help someone as they had hoped or expected."
+        }
+      ],
+      "description": "a strong feeling of annoyance, displeasure, or hostility."
+    },
+    {
+      "name": "Fearful",
+      "children": [
+        {
+          "name": "Threatened",
+          "children": [
+            {
+              "name": "Exposed",
+              "value": 12,
+              "description": "not covered or hidden; visible."
+            },
+            {
+              "name": "Nervous",
+              "value": 12,
+              "description": "easily agitated or alarmed; tending to be anxious; highly strung."
+            }
+          ],
+          "description": "state one's intention to take hostile action against someone in retribution for something done or not done."
+        },
+        {
+          "name": "Rejected",
+          "children": [
+            {
+              "name": "Persecuted",
+              "value": 12,
+              "description": "subject (someone) to hostility and ill-treatment, especially because of their race or political or religious beliefs."
+            },
+            {
+              "name": "Excluded",
+              "value": 12,
+              "description": "deny (someone) access to or bar (someone) from a place, group, or privilege."
+            }
+          ],
+          "description": "dismiss as inadequate, inappropriate, or not to one's taste."
+        },
+        {
+          "name": "Weak",
+          "children": [
+            {
+              "name": "Insignificant",
+              "value": 12,
+              "description": "too small or unimportant to be worth consideration."
+            },
+            {
+              "name": "Worthless",
+              "value": 12,
+              "description": "having no real value or use."
+            }
+          ],
+          "description": "lacking the power to perform physically demanding tasks; lacking physical strength and energy."
+        },
+        {
+          "name": "Insecure",
+          "children": [
+            {
+              "name": "Inferior",
+              "value": 12,
+              "description": "lower in rank, status, or quality."
+            },
+            {
+              "name": "Inadequate",
+              "value": 12,
+              "description": "lacking the quality or quantity required; insufficient for a purpose."
+            }
+          ],
+          "description": "not firmly fixed; liable to give way or break."
+        },
+        {
+          "name": "Anxious",
+          "children": [
+            {
+              "name": "Worried",
+              "value": 12,
+              "description": "anxious or troubled about actual or potential problems."
+            },
+            {
+              "name": "Overwhelmed",
+              "value": 12,
+              "description": "bury or drown beneath a huge mass."
+            }
+          ],
+          "description": "experiencing worry, unease, or nervousness, typically about an imminent event or something with an uncertain outcome."
+        },
+        {
+          "name": "Scared",
+          "children": [
+            {
+              "name": "Frightened",
+              "value": 12,
+              "description": "afraid or anxious."
+            },
+            {
+              "name": "Helpless",
+              "value": 12,
+              "description": "unable to defend oneself or to act without help."
+            }
+          ],
+          "description": "fearful; frightened."
+        }
+      ],
+      "description": "feeling afraid; showing fear or anxiety."
+    },
+    {
+      "name": "Bad",
+      "children": [
+        {
+          "name": "Bored",
+          "children": [
+            {
+              "name": "Indifferent",
+              "value": 12,
+              "description": "having no particular interest or sympathy; unconcerned."
+            },
+            {
+              "name": "Apathetic",
+              "value": 12,
+              "description": "showing or feeling no interest, enthusiasm, or concern."
+            }
+          ],
+          "description": "feeling weary because one is unoccupied or lacks interest in one's current activity."
+        },
+        {
+          "name": "Busy",
+          "children": [
+            {
+              "name": "Pressured",
+              "value": 12,
+              "description": "attempt to persuade or coerce (someone) into doing something."
+            },
+            {
+              "name": "Rushed",
+              "value": 12,
+              "description": "done or completed too hurriedly; hasty."
+            }
+          ],
+          "description": "having a great deal to do."
+        },
+        {
+          "name": "Stressed",
+          "children": [
+            {
+              "name": "Overwhelmed",
+              "value": 12,
+              "description": "bury or drown beneath a huge mass."
+            },
+            {
+              "name": "Out of Control",
+              "value": 12,
+              "description": "no longer possible to manage."
+            }
+          ],
+          "description": "experiencing mental or emotional strain or tension."
+        },
+        {
+          "name": "Tired",
+          "children": [
+            {
+              "name": "Sleepy",
+              "value": 12,
+              "description": "needing or ready for sleep."
+            },
+            {
+              "name": "Unfocused",
+              "value": 12,
+              "description": "(of a person or their eyes) not seeing clearly; appearing glazed or expressionless."
+            }
+          ],
+          "description": "in need of sleep or rest; weary."
+        }
+      ],
+      "description": "of poor quality or a low standard."
+    }
+  ]
+}
