@@ -29,7 +29,7 @@ const SunburstChart = () => {
     .endAngle((d: any) => d.x1)
     .padAngle((d: any) => Math.min((d.x1 - d.x0) / 2, 0.005))
     .padRadius(RADIUS / 2)
-    .innerRadius(0)
+    .innerRadius((d: any) => d.y0)
     .outerRadius((d: any) => d.y1 - 1);
 
   const getAutoBox = () => {
@@ -69,20 +69,12 @@ const SunburstChart = () => {
         return color(d.data.name);
       })
       .attr("d", arc)
-      .on("mouseover", (e: any, d: any) => {
-        console.log("mouseover::EVENT", e);
-        console.log("mouseover::DATA", d);
+      .on("click", (d: any) => {
         tooldiv
           .style("visibility", "visible")
-          .text(`${d.data.name}: ${d.data.description}`);
-      })
-      .on("mousemove", (e: any, d: any) => {
-        tooldiv
-          .style("top", e.pageY - 50 + "px")
-          .style("left", e.pageX - 50 + "px");
-      })
-      .on("mouseout", () => {
-        tooldiv.style("visibility", "hidden");
+          .text(`${d.data.name}: ${d.data.description}`)
+          .style("top", "450px")
+          .style("left", "665px");
       })
       .append("title")
       .text(

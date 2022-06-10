@@ -1,11 +1,8 @@
-import React from 'react';
-// import './App.css';
-import SunburstChart from './components/SunburstChart';
+import React from "react";
+import SunburstChart from "./components/SunburstChart";
 
 function App() {
-  return (
-    <SunburstChart />
-  );
+  return <SunburstChart />;
 }
 
 export default App;
