@@ -23,7 +23,7 @@ const SunburstChart = () => {
 
   const format = d3.format(",d");
 
-  const arc = d3
+  const arc: any = d3
     .arc()
     .startAngle((d: any) => d.x0)
     .endAngle((d: any) => d.x1)
@@ -51,12 +51,34 @@ const SunburstChart = () => {
       .select("#chartArea")
       .append("div")
       .style("visibility", "hidden")
-      .style("position", "absolute")
+      // .style("position", "absolute")
       .style("background-color", "white")
-      .style("padding", "1em")
-      .style("max-width", "150px")
-      .style("border", "1px solid")
-      .style("border-radius", "10px");
+      .style("padding", "0.5em 1.5em")
+      .style("min-width", "250px")
+      .style("max-width", "250px")
+      .style("border", "1px solid #e8e8e8")
+      .style("font-family", "Helvetica")
+      .style("position", "fixed");
+    
+    const mobileVersion = () => tooldiv.style("top", "5%").style("left", "");
+    const desktopVersion = () => tooldiv.style("top", "3%").style("left", "77%");
+
+    window.addEventListener('load', function() {
+      if (window.innerWidth < 600) {
+        mobileVersion();
+      } 
+      if (window.innerWidth > 600) {
+        desktopVersion();
+      } 
+    });
+
+    window.addEventListener("resize", function(){
+      if (window.innerWidth > 500) {
+        desktopVersion();
+      } else {
+        mobileVersion();
+      }
+    });
 
     svg
       .append("g")
@@ -72,9 +94,8 @@ const SunburstChart = () => {
       .on("click", (e: any, d: any) => {
         tooldiv
           .style("visibility", "visible")
-          .text(`${d.data.name}: ${d.data.description}`)
-          .style("top", "10%")
-          .style("left", "78%");
+          // .text(`${d.data.name}: ${d.data.description}`)
+          .html(`<p><strong>${d.data.name}</strong></p><hr/><p>${d.data.description}</p>`);
       })
       .append("title")
       .text(
@@ -115,11 +136,8 @@ const SunburstChart = () => {
   }, [arc, color, format]);
 
   return (
-    <div
-      id="chartArea"
-      style={{ display: "flex", justifyContent: "center", padding: "1em" }}
-    >
-      <svg width={SIZE} height={SIZE} ref={svgRef} />
+    <div id="chartArea" style={{'display': 'flex', 'justifyContent': 'center', 'padding': '5% 2%'}}>
+      <svg width={SIZE} height={window.innerWidth > 600 ? SIZE : 920} ref={svgRef} />
     </div>
   );
 };
