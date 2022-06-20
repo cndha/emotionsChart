@@ -81,7 +81,7 @@ const SunburstChart = () => {
 
     svg
       .append("g")
-      .attr("fill-opacity", 0.5)
+      .attr("fill-opacity", 1)
       .selectAll("path")
       .data(root.descendants().filter((d: any) => d.depth))
       .join("path")
