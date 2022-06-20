@@ -80,13 +80,16 @@ const SunburstChart = () => {
 
     svg
       .append("g")
-      .attr("fill-opacity", 0.85)
+      .attr("fill-opacity", 0.9)
       .selectAll("path")
       .data(root.descendants().filter((d: any) => d.depth))
       .join("path")
       .attr("fill", (d: any) => {
         while (d.depth > 1) d = d.parent;
         return color(d.data.name);
+      })
+      .on('mouseover', function(){
+        d3.select(this).attr('fill-opacity', 0.6)
       })
       .attr("d", arc)
       .on("click", (e: any, d: any) => {
