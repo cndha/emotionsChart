@@ -31,7 +31,6 @@ const SunburstChart = () => {
     .padRadius(RADIUS / 2)
     .innerRadius((d: any) => d.y0)
     .outerRadius((d: any) => d.y1 - 1);
-
     
   const getAutoBox = () => {
     if (!svgRef.current) {
@@ -81,7 +80,7 @@ const SunburstChart = () => {
 
     svg
       .append("g")
-      .attr("fill-opacity", 0.8)
+      .attr("fill-opacity", 1)
       .selectAll("path")
       .data(root.descendants().filter((d: any) => d.depth))
       .join("path")
@@ -94,7 +93,7 @@ const SunburstChart = () => {
         tooldiv
           .style("visibility", "visible")
           // .text(`${d.data.name}: ${d.data.description}`)
-          .html(`<p><strong>${d.data.name}</strong></p><hr/><p>${d.data.description}</p>`);
+          .html(`<p><strong>${d.data.name}</strong></p><hr/><p>${d.data.description}</p>`)
       })
       .append("title")
       .text(
