@@ -32,13 +32,12 @@ const SunburstChart = () => {
     .innerRadius((d: any) => d.y0)
     .outerRadius((d: any) => d.y1 - 1);
 
+    
   const getAutoBox = () => {
     if (!svgRef.current) {
       return "";
     }
-
     const { x, y, width, height } = svgRef.current.getBBox();
-
     return [x, y, width, height].toString();
   };
 
@@ -82,7 +81,7 @@ const SunburstChart = () => {
 
     svg
       .append("g")
-      .attr("fill-opacity", 0.6)
+      .attr("fill-opacity", 0.5)
       .selectAll("path")
       .data(root.descendants().filter((d: any) => d.depth))
       .join("path")
@@ -137,7 +136,7 @@ const SunburstChart = () => {
 
   return (
     <div id="chartArea" style={{'display': 'flex', 'justifyContent': 'center', 'padding': '5% 2%'}}>
-      <svg width={SIZE} height={window.innerWidth > 600 ? SIZE : 920} ref={svgRef} />
+      <svg width={SIZE} height={SIZE} ref={svgRef} />
     </div>
   );
 };
