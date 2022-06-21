@@ -88,9 +88,6 @@ const SunburstChart = () => {
         while (d.depth > 1) d = d.parent;
         return color(d.data.name);
       })
-      .on('mouseover', function(){
-        d3.select(this).attr('fill-opacity', 0.6)
-      })
       .attr("d", arc)
       .on("click", (e: any, d: any) => {
         tooldiv
